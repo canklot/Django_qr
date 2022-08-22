@@ -1,0 +1,10 @@
+{% extends "qr_app\base.html" %}
+<h1>Dont forget to wash your hands</h1>
+
+{% block content%}
+    {% if title == "clean" %}
+        <h1>Your hands are washed and clean</h1>
+    {% elif title == "dirty" %}
+        <h1>You are filthy man</h1>
+    {% endif %}
+{% endblock content%}
