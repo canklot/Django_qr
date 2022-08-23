@@ -1,0 +1,10 @@
+{% extends "qr_app\base.html" %}
+
+
+{% block content%}
+<form action="/qr_app/form" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock content%}
