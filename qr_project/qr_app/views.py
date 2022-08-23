@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect,FileResponse
 from .forms import TextForm
 import qrcode
 from PIL import Image
+from .pdf_logic import convert_to_pdf
 
 
 mylist = [
@@ -38,15 +39,20 @@ def form(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
-            # redirect to a new URL:
-            img = qrcode.make(form.cleaned_data['text'])
-            fomatted_img = BytesIO()
-            img.save(fomatted_img, format="png")
-            response = HttpResponse(fomatted_img.getvalue(),content_type='image/png')
-            response['Content-Disposition'] = 'attachment; filename="output.png"'
-            #img.save(response,"PNG")
+            
+            lines = form.cleaned_data['text'].splitlines()
+            
+            qr_images = []
+            for line in lines:
+                img = qrcode.make(line)
+                fomatted_img = BytesIO()
+                img.save(fomatted_img, format="png")    
+                fomatted_img = fomatted_img.getvalue()
+                qr_images.append(fomatted_img)
+            pdf = convert_to_pdf(qr_images)    
+            response = HttpResponse(pdf,content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment; filename="output.pdf"'
             return response
-           # return FileResponse(form.cleaned_data['text'])
 
     # if a GET (or any other method) we'll create a blank form
     else:
