@@ -1,3 +1,4 @@
+from io import BytesIO
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect,FileResponse
 from .forms import TextForm
@@ -39,9 +40,11 @@ def form(request):
             # ...
             # redirect to a new URL:
             img = qrcode.make(form.cleaned_data['text'])
-            response = HttpResponse(content_type='image/png')
+            fomatted_img = BytesIO()
+            img.save(fomatted_img, format="png")
+            response = HttpResponse(fomatted_img.getvalue(),content_type='image/png')
             response['Content-Disposition'] = 'attachment; filename="output.png"'
-            img.save(response,"PNG")
+            #img.save(response,"PNG")
             return response
            # return FileResponse(form.cleaned_data['text'])
 
