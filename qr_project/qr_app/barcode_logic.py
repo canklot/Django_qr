@@ -22,7 +22,7 @@ def convert_list_to_barcode(lines):
     barcode_image_list = []
     for line in lines:
         barcode_image =BytesIO()
-        Code128(line, writer=ImageWriter()).write(barcode_image)
+        Code128(line, writer=ImageWriter()).write(barcode_image,{"font_size": 6})
         barcode_image_list.append(barcode_image)
         image = Image.open(barcode_image) #debug
         image.show() #debug
