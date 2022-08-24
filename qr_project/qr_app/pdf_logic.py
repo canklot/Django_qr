@@ -9,7 +9,11 @@ fomatted_img = fomatted_img.getvalue()
 imglist = []
 imglist.append(fomatted_img) """
 
-
+with open("qr_project/qr_app/static/never.jpg", "rb") as f:
+        mybytearray = bytearray()
+        mybytearray+=f.read()
+imglist = []
+imglist.append(mybytearray)
 
 def convert_to_pdf(imglist):
     doc = fitz.open()  # PDF with the pictures
@@ -22,9 +26,10 @@ def convert_to_pdf(imglist):
         paper_width, paper_height = fitz.paper_size("A6")
         page = doc.new_page(width = paper_width, height = paper_height)  # new page with ...# pic dimension
         page.show_pdf_page(rect, imgPDF, 0)  # image fills the page
+    #doc.save("all-my-pics.pdf") # Just for debugging 
     binary_pdf = BytesIO()
     doc.save(binary_pdf)
     binary_pdf = binary_pdf.getvalue()
     return binary_pdf
     
-#convert_to_pdf(imglist)
+#convert_to_pdf(imglist)  # Just for debugging 
