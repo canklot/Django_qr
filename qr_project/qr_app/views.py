@@ -35,8 +35,11 @@ def form(request):
         # check whether it's valid:
         if form.is_valid():
             lines = form.cleaned_data['text'].splitlines()
-            #pdf = convert_list_to_qr(lines)
-            pdf = convert_list_to_barcode(lines)
+            barcode_type = form.cleaned_data["barcode_type_selection"]
+            if barcode_type == "qr_code":
+                pdf = convert_list_to_qr(lines)
+            elif barcode_type == "barcode_code128":
+                pdf = convert_list_to_barcode(lines)
            
             response = HttpResponse(pdf,content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="output.pdf"'
