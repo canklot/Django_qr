@@ -1,11 +1,8 @@
 from io import BytesIO
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect,FileResponse
+from .barcode_logic import convert_list_to_qr
 from .forms import TextForm
-import qrcode
-from PIL import Image
-from .pdf_logic import convert_to_pdf
-
 
 mylist = [
     {
@@ -37,23 +34,12 @@ def form(request):
         form = TextForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            
             lines = form.cleaned_data['text'].splitlines()
-            
-            qr_images = []
-            for line in lines:
-                img = qrcode.make(line)
-                fomatted_img = BytesIO()
-                img.save(fomatted_img, format="png")    
-                fomatted_img = fomatted_img.getvalue()
-                qr_images.append(fomatted_img)
-            pdf = convert_to_pdf(qr_images)    
+            pdf = convert_list_to_qr(lines)
+           
             response = HttpResponse(pdf,content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="output.pdf"'
             return response
-
     # if a GET (or any other method) we'll create a blank form
     else:
         form = TextForm()
