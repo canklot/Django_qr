@@ -10,7 +10,7 @@ def convert_to_pdf(imglist):
         pdfbytes = img.convert_to_pdf()  # make a PDF stream
         img.close()  # no longer needed. Remove after with
         imgPDF = fitz.open("pdf", pdfbytes)  # open stream as PDF
-        paper_width, paper_height = fitz.paper_size("A6")
+        paper_height, paper_width = fitz.paper_size("A6")
         page = doc.new_page(width = paper_width, height = paper_height)  # new page with ...# pic dimension
         page.show_pdf_page(rect, imgPDF, 0)  # image fills the page
     #doc.save("all-my-pics.pdf") # Just for debugging 

@@ -1,7 +1,7 @@
 from io import BytesIO
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect,FileResponse
-from .barcode_logic import convert_list_to_qr
+from .barcode_logic import convert_list_to_barcode, convert_list_to_qr
 from .forms import TextForm
 
 mylist = [
@@ -35,7 +35,8 @@ def form(request):
         # check whether it's valid:
         if form.is_valid():
             lines = form.cleaned_data['text'].splitlines()
-            pdf = convert_list_to_qr(lines)
+            #pdf = convert_list_to_qr(lines)
+            pdf = convert_list_to_barcode(lines)
            
             response = HttpResponse(pdf,content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="output.pdf"'
