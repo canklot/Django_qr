@@ -21,7 +21,7 @@ def index(request):
                 pdf = convert_list_to_barcode(lines)
 
             response = HttpResponse(pdf, content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="output.pdf"'
+            response['Content-Disposition'] = 'attachment; filename="QR_codes.pdf"'
             return response
 
 
