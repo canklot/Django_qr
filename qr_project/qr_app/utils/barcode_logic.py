@@ -14,7 +14,7 @@ def convert_list_to_qr(lines):
     for line in lines:
         img = qrcode.make(line)
         font_type = ImageFont.truetype("calibri.ttf", 24)
-        ImageDraw.Draw(img).text((70, 260),line,font=font_type)
+        ImageDraw.Draw(img).text((70, 260), line, font=font_type)
         fomatted_img = BytesIO()
         img.save(fomatted_img, format="JPEG")
         # If required I guess I can create svg files for better quality
@@ -30,7 +30,8 @@ def convert_list_to_barcode(lines):
     for line in lines:
         barcode_image = BytesIO()
         Code128(line, writer=ImageWriter()).write(
-            barcode_image, {"font_size": 6})
+            barcode_image, {"font_size": 6, 
+                            "text_distance": 2})
         barcode_image_list.append(barcode_image)
         # image = Image.open(barcode_image) #debug
         # image.show() #debug
