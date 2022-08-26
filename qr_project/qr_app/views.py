@@ -1,7 +1,6 @@
-from io import BytesIO
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, FileResponse
-from .barcode_logic import convert_list_to_barcode, convert_list_to_qr
+from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
 from .forms import TextForm
 
 mylist = [
@@ -32,11 +31,9 @@ def bathroom(request):
 
 
 def form(request):
-    # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = TextForm(request.POST)
-        # check whether it's valid:
         if form.is_valid():
             lines = form.cleaned_data['text'].splitlines()
             barcode_type = form.cleaned_data["barcode_type_selection"]
@@ -52,5 +49,5 @@ def form(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = TextForm()
-
+        
     return render(request, 'qr_app/form.html', {'form': form})
