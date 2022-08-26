@@ -2,9 +2,12 @@
 
 
 {% block content%}
-<form action="/qr_app/form" method="post">
+<form action="{{ current_path }}" method="post">
     {% csrf_token %}
-    {{ form }}
+    <div></div>
+    <div >{{ form.text }}</div>
+    <div class="radio_css">{{ form.barcode_type_selection }}</div>
+    
     <input type="submit" value="Submit">
 </form>
 {% endblock content%}
