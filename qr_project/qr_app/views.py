@@ -12,7 +12,10 @@ def index(request):
         # create a form instance and populate it with data from the request:
         form = TextForm(request.POST)
         if form.is_valid():
-            lines = form.cleaned_data['text'].splitlines()
+            text = form.cleaned_data['text']
+            if not text.isascii():
+                return HttpResponse("Barcode code 128 only accepts ascii character")
+            lines = text.splitlines()
             barcode_type = form.cleaned_data["barcode_type_selection"]
 
             if barcode_type == "qr_code":
