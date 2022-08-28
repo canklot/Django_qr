@@ -1,8 +1,5 @@
-{% extends "qr_app\base.html" %}
 
-
-{% block content%}
-<form id="qr_form_id" class="form_general" method="post" >
+<form id="qr_form_id" class="form_general center" method="post" >
     {% csrf_token %}
     <div class="tool_header">Create QR code</div>                        
     <div class="form_text_css" >{{ form.text }}</div>
@@ -10,4 +7,3 @@
     
     <input type="submit" value="Submit" >
 </form>
-{% endblock content%}

@@ -8,7 +8,7 @@ def index(request):
     max_char_limit = 20
     if request.method != 'POST':
         form = TextForm()
-        return render(request, 'qr_app/form.html', {'form': form})
+        return render(request, 'qr_app/home.html', {'form': form})
     
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:

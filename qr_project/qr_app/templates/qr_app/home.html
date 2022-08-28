@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        <h1>What about you baby</h1>
-        {% for item in mylist%}
-        <h1>{{ item.title }}</h1>
-        <h1>{{ item.content }}</h1>
-        {% endfor%}
-</html>
+{% extends "qr_app\base.html" %}
+
+
+{% block content%}
+{% include 'qr_app\header.html' %} 
+{% include 'qr_app\form.html' %} 
+{% include 'qr_app\footer.html' %} 
+{% endblock content%}
