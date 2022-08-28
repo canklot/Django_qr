@@ -15,8 +15,6 @@ def index(request):
         form = TextForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['text']
-            
-            
             lines = text.splitlines()
             
             for line in lines:
