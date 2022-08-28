@@ -5,13 +5,18 @@ body {
     height: 100%;
 
 }
-.form_radio_css {}
+.form_radio_css {
+    font-size: larger;
+}
 
 .form_text_css {
     width: 100%;
     background-color: rgb(24, 26, 27);
-    padding: 2%;
+    padding: 2% 0px 2% ;
     color: aliceblue;
+}
+#qr_text_input_id.form_text_css{
+    padding-left:   2%;
 }
 
 .form_general{
@@ -32,6 +37,7 @@ body {
   }
 
   .tool_header{
+    padding-top: 3%;
     font-size: 42px;
     font-weight: 600;
   }
