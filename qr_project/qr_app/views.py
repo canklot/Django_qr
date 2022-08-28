@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
 from .forms import TextForm
 
+
 def index(request):
     max_char_limit = 20
     if request.method != 'POST':
