@@ -14,7 +14,7 @@ def convert_list_to_qr(lines):
     for line in lines:
         img = qrcode.make(line)
         font_type = ImageFont.truetype("calibri.ttf", 24)
-        ImageDraw.Draw(img).text((70, 260), line, font=font_type)
+        ImageDraw.Draw(img).text((40, 260), line, font=font_type)
         fomatted_img = BytesIO()
         img.save(fomatted_img, format="JPEG")
         # If required I guess I can create svg files for better quality

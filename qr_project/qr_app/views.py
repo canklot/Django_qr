@@ -4,6 +4,7 @@ from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
 from .forms import TextForm
 
 def index(request):
+    max_char_limit = 20
     if request.method != 'POST':
         form = TextForm()
         return render(request, 'qr_app/form.html', {'form': form})
@@ -15,7 +16,12 @@ def index(request):
             text = form.cleaned_data['text']
             if not text.isascii():
                 return HttpResponse("Barcode code 128 only accepts ascii character")
+            
             lines = text.splitlines()
+            
+            for line in lines:
+                if len(line) > 20:
+                    return HttpResponse(f"Max character limit is {max_char_limit}")
             barcode_type = form.cleaned_data["barcode_type_selection"]
 
             if barcode_type == "qr_code":
