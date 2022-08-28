@@ -15,8 +15,7 @@ def index(request):
         form = TextForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['text']
-            if not text.isascii():
-                return HttpResponse("Barcode code 128 only accepts ascii character")
+            
             
             lines = text.splitlines()
             
@@ -28,6 +27,8 @@ def index(request):
             if barcode_type == "qr_code":
                 pdf = convert_list_to_qr(lines)
             elif barcode_type == "barcode_code128":
+                if not text.isascii():
+                    return HttpResponse("Barcode code 128 only accepts ascii character")
                 pdf = convert_list_to_barcode(lines)
 
             response = HttpResponse(pdf, content_type='application/pdf')
