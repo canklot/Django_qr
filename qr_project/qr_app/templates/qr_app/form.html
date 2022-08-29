@@ -1,0 +1,39 @@
+<form id="qr_form_id" class="form_general center" method="post">
+    {% csrf_token %}
+    <div class="tool_header">Create QR code</div>
+    <div class="form_text_css">{{ form.text }}</div>
+    <div class="form_radio_css">{{ form.barcode_type_selection }}</div>
+
+    <input type="submit" value="Submit">
+</form>
+<style>
+    .form_general {
+        padding: 5%;
+
+    }
+
+    .form_radio_css {
+        font-size: larger;
+    }
+    .form_radio_css ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+
+    .form_text_css {
+        width: 100%;
+        background-color: rgb(24, 26, 27);
+        padding: 2% 0px 2%;
+        color: aliceblue;
+    }
+
+    .tool_header {
+        padding-top: 3%;
+        font-size: 42px;
+        font-weight: 600;
+    }
+
+    #qr_text_input_id.form_text_css {
+        padding-left: 2%;
+    }
+</style>
