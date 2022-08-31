@@ -3,7 +3,7 @@ function checNotAscii(text) {
   return hasMoreThanAscii;
 }
 
-/* }
+/*
 This code uses jQuery and it intercepts submit request. 
 If returns false request discarded. */
 

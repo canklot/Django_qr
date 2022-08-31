@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, FileResponse
-from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
+from django.http import HttpResponse
 from .forms import TextForm
+from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
+
 
 
 def index(request):
@@ -10,8 +11,7 @@ def index(request):
         form = TextForm()
         return render(request, 'qr_app/home.html', {'form': form})
     
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
+    elif request.method == 'POST':
         form = TextForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['text']
@@ -32,7 +32,3 @@ def index(request):
             response = HttpResponse(pdf, content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="QR_codes.pdf"'
             return response
-
-
-def bathroom(request):
-    return render(request, "qr_app/bathroom.html", {"title": "dirty"})
