@@ -16,7 +16,7 @@ def convert_list_to_qr(lines):
         ImageDraw.Draw(img).text((40, 300), line, font=font_type)
         # writes text under the QR code
         fomatted_img = BytesIO()
-        img.save(fomatted_img, format="JPEG",quality=75)
+        img.save(fomatted_img, format="JPEG", quality=75)
         fomatted_img = fomatted_img.getvalue()
         qr_images.append(fomatted_img)
     pdf = img_list_to_pdf(qr_images)
