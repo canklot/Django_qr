@@ -1,20 +1,21 @@
 from io import BytesIO
-from PIL import ImageFont
-from PIL import ImageDraw
+
+from PIL import ImageFont, ImageDraw
 from barcode import Code128
 from barcode.writer import ImageWriter
 import qrcode
+
 from .pdf_logic import img_list_to_pdf
 
 
 def convert_list_to_qr(lines):
     qr_images = []
     for line in lines:
+        # Version 2	supports 47 characters and produces 25x25 pixel matrix
         img = qrcode.make(line, version=2)
-        # version 2	is 25x25 and supports 47 chars
         font_type = ImageFont.truetype("calibri.ttf", 24)
+        # Writes text under the QR code
         ImageDraw.Draw(img).text((40, 300), line, font=font_type)
-        # writes text under the QR code
         fomatted_img = BytesIO()
         img.save(fomatted_img, format="JPEG", quality=75)
         fomatted_img = fomatted_img.getvalue()
