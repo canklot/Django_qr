@@ -1,6 +1,5 @@
-function checNotAscii(text) {
-  let hasMoreThanAscii = [...text].some((char) => char.charCodeAt(0) > 127);
-  return hasMoreThanAscii;
+function checkNonAscii(text) {
+  return [...text].some((char) => char.charCodeAt(0) > 127);
 }
 
 /*
@@ -9,11 +8,10 @@ If returns false request discarded. */
 
 $("#qr_form_id").on("submit", function () {
   text = document.getElementById("qr_text_input_id").value;
-  hasMoreThanAscii = checNotAscii(text);
+  hasMoreThanAscii = checkNonAscii(text);
   if (hasMoreThanAscii) {
     alert("Code128 only supports ascii charecters");
     return false;
-  } else {
-    return true;
   }
+  return true;
 });

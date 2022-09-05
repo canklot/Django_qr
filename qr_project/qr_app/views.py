@@ -30,7 +30,8 @@ def index(request):
                     return HttpResponse("Barcode code 128 only accepts ascii character")
                 pdf = convert_list_to_barcode(lines)
 
-            date_time = timezone.now().strftime("%m/%d/%Y, %H:%M:%S")
+            date_time = timezone.now().strftime("%m/%d/%Y-%H:%M:%S")
             response = HttpResponse(pdf, content_type='application/pdf')
-            response['Content-Disposition'] = f'attachment; filename="QR_codes_{date_time}.pdf"'
+            response[
+                'Content-Disposition'] = f'attachment; filename="{barcode_type}-{date_time}.pdf"'
             return response
