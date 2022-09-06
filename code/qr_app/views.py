@@ -1,6 +1,8 @@
+from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils import timezone
+from rest_framework.decorators import api_view
 
 from .forms import TextForm
 from .utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
@@ -34,3 +36,15 @@ def index(request):
         response[
             'Content-Disposition'] = f'attachment; filename="{barcode_type}-{date_time}.pdf"'
         return response
+
+
+@api_view(['GET'])
+def api(request):
+    text = request.query_params["text"]
+    pdf = convert_list_to_qr([text])
+    date_time = timezone.now().strftime("%m/%d/%Y-%H:%M:%S")
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response[
+        'Content-Disposition'] = f'attachment; filename="output-{date_time}.pdf"'
+    return response
+    return HttpResponse(text)
