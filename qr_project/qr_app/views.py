@@ -12,26 +12,25 @@ def index(request):
         form = TextForm()
         return render(request, 'qr_app/home.html', {'form': form})
 
-    elif request.method == 'POST':
-        form = TextForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data['text']
-            lines = text.splitlines()
+    form = TextForm(request.POST)
+    if form.is_valid():
+        text = form.cleaned_data['text']
+        lines = text.splitlines()
 
-            for line in lines:
-                if len(line) > 20:
-                    return HttpResponse(f"Max character limit is {max_char_limit}")
-            barcode_type = form.cleaned_data['barcode_type_selection']
+        for line in lines:
+            if len(line) > 20:
+                return HttpResponse(f"Max character limit is {max_char_limit}")
+        barcode_type = form.cleaned_data['barcode_type_selection']
 
-            if barcode_type == 'qr_code':
-                pdf = convert_list_to_qr(lines)
-            elif barcode_type == 'barcode_code128':
-                if not text.isascii():
-                    return HttpResponse("Barcode code 128 only accepts ascii character")
-                pdf = convert_list_to_barcode(lines)
+        if barcode_type == 'qr_code':
+            pdf = convert_list_to_qr(lines)
+        elif barcode_type == 'barcode_code128':
+            if not text.isascii():
+                return HttpResponse("Barcode code 128 only accepts ascii character")
+            pdf = convert_list_to_barcode(lines)
 
-            date_time = timezone.now().strftime("%m/%d/%Y-%H:%M:%S")
-            response = HttpResponse(pdf, content_type='application/pdf')
-            response[
-                'Content-Disposition'] = f'attachment; filename="{barcode_type}-{date_time}.pdf"'
-            return response
+        date_time = timezone.now().strftime("%m/%d/%Y-%H:%M:%S")
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response[
+            'Content-Disposition'] = f'attachment; filename="{barcode_type}-{date_time}.pdf"'
+        return response
