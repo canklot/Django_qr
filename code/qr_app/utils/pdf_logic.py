@@ -1,5 +1,5 @@
 from io import BytesIO
-import fitz  # fitz is actually PyMuPDF
+import fitz  # PyMuPDF
 
 
 """ This function puts every image on a new pdf page  
@@ -9,6 +9,7 @@ import fitz  # fitz is actually PyMuPDF
 def img_list_to_pdf(imglist):
     doc = fitz.open()  # Empty output PDF
     paper_height, paper_width = fitz.paper_size("A6")
+
     for file in imglist:
         with fitz.open("JPEG", file) as img:
             rect = img[0].rect  # pic dimensions
