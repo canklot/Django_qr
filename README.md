@@ -22,6 +22,7 @@ To use the api send your data in json format. You should recieve a pdf file as a
 > Format: JSON
 > Method: POST
 
+
 Field | Type | Description
 ------|------------|------------
 text | List of strings| Data you want to create the qr_code of
