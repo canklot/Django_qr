@@ -19,7 +19,9 @@ A big thanks to contributors of these open source libraries which are used in th
 To use the api send your data in json format. You should recieve a pdf file as a response. Or an error message in html or plan text format. 
 
 > URL: website/qr_app/api
+> 
 > Format: JSON
+> 
 > Method: POST
 
 
