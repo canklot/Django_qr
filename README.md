@@ -27,7 +27,7 @@ To use the api send your data in json format. You should recieve a pdf file as a
 | Field                  | Type            | Restraints                     | Description                                       |
 | ---------------------- | --------------- | ------------------------------ | ------------------------------------------------- |
 | text                   | List of strings | Max length 20                  | Data you want to create the qr_code of            |
-| barcode_type_selection | String          | "qr_code" or "barcode_code128" | The type of barcode of qr_code you want to create |
+| barcode_type_selection | String          | "qr_code" or "Code128" | The type of barcode of qr_code you want to create |
 
 Example json object
 
