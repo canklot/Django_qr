@@ -1,7 +1,7 @@
 from io import BytesIO
 
 from PIL import ImageFont, ImageDraw
-from barcode import Code128
+import barcode
 from barcode.writer import ImageWriter
 import qrcode
 
@@ -24,13 +24,15 @@ def convert_list_to_qr(lines):
     return pdf
 
 
-def convert_list_to_barcode(lines):
+def convert_list_to_barcode(lines, barcode_type):
     barcode_image_list = []
+    barcode_codex = barcode.get_barcode_class(barcode_type)
     for line in lines:
         barcode_image = BytesIO()
-        Code128(line, writer=ImageWriter(format="JPEG")).write(
-            barcode_image, {"font_size": 6,
-                            "text_distance": 2})
+        barcode_ins = barcode_codex(line, writer=ImageWriter(format="JPEG"))
+        barcode_ins.write(barcode_image,
+                          {"font_size": 6,
+                           "text_distance": 2})
         barcode_image_list.append(barcode_image)
     pdf = img_list_to_pdf(barcode_image_list)
     return pdf
