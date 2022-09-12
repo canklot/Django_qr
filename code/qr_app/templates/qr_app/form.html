@@ -2,8 +2,8 @@
   {% csrf_token %}
   <div class="tool_header">Create QR code</div>
   <div class="form_text_css">{{ form.text }}</div>
-  <div class="form_radio_css">{{ form.barcode_type_selection }}</div>
-  <input type="submit" value="Submit" />
+  <div class="barcode_type_css">{{ form.barcode_type_selection }}</div>
+  <input class="form_submit_css" type="submit" value="Submit" />
 </form>
 
 <style>
@@ -11,13 +11,15 @@
     padding: 5%;
   }
 
-  .form_radio_css {
+  .barcode_type_css {
     font-size: larger;
+    background-color: inherit;
+    color: inherit;
+    border-radius: 5px;
   }
-
-  .form_radio_css ul {
-    list-style-type: none;
-    padding: 0px;
+  option {
+    /* Whatever color  you want */
+    background-color: slategray;
   }
 
   .form_text_css {
@@ -35,5 +37,14 @@
 
   #qr_text_input_id.form_text_css {
     padding-left: 2%;
+  }
+
+  .form_submit_css {
+    margin-top: 20px;
+    padding: 10px 20px 10px;
+    background-color: dodgerblue;
+    color: inherit;
+    border-radius: 5px;
+    border-color: transparent;
   }
 </style>
