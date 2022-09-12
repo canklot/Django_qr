@@ -11,5 +11,5 @@ class TextForm(forms.Form):
     CHOICES = [('qr_code', 'Qr Code'), ('barcode_code128', 'Barcode Code128')]
 
     barcode_type_selection = forms.ChoiceField(
-        choices=CHOICES, widget=forms.RadioSelect(attrs={'id': 'qr_type_radio_input_id',
-                                                         'class': 'form_radio_css'}))
+        choices=CHOICES, widget=forms.Select(attrs={'id': 'qr_type_radio_input_id',
+                                                    'class': 'barcode_type_css'}))
