@@ -13,12 +13,12 @@ $("#qr_form_id").on("submit", function () {
 
   if (barcode_type == "qr_code") {
     return true;
-  }
-
-  hasMoreThanAscii = checkNonAscii(text);
-  if (hasMoreThanAscii) {
-    alert("Code128 only supports ascii charecters");
-    return false;
+  } else if (barcode_type == "Code128") {
+    hasMoreThanAscii = checkNonAscii(text);
+    if (hasMoreThanAscii) {
+      alert("Code128 only supports ascii charecters");
+      return false;
+    }
   }
   return true;
 });
