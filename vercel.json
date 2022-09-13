@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "code/wsgi.py",
+        "src": "qr_project/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.7.9" }
       },
@@ -16,12 +16,12 @@
     ],
     "routes": [
       {
-        "src": "code/qr_app/static/(.*)",
-        "dest": "code/qr_app/static/$1"
+        "src": "code/qr_project/static/(.*)",
+        "dest": "code/qr_project/static/$1"
       },
       {
-        "src": "code/(.*)",
-        "dest": "code/wsgi.py"
+        "src": "code/qr_project/(.*)",
+        "dest": "code/qr_project/wsgi.py"
       }
     ]
   }
