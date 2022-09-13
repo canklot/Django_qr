@@ -7,13 +7,15 @@ import qrcode
 
 from .pdf_logic import img_list_to_pdf
 
+font_dir = "qr_app/static/Roboto-Regular.ttf"
+
 
 def convert_list_to_qr(lines):
     qr_images = []
     for line in lines:
         # Version 2	supports 47 characters and produces 25x25 pixel matrix
         img = qrcode.make(line, version=2)
-        font_type = ImageFont.truetype("calibri.ttf", 24)
+        font_type = ImageFont.truetype(font_dir, 24)
         # Writes text under the QR code
         ImageDraw.Draw(img).text((40, 300), line, font=font_type)
         formatted_img = BytesIO()
