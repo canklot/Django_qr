@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'qr_project.wsgi.application'
 DATABASES = {}
 
 # Lines added for vercel
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'code/qr_app/static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'code/qr_app/static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'qr_app/static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'qr_app/static')
 
 
 # Password validation
