@@ -80,8 +80,10 @@ WSGI_APPLICATION = 'qr_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {}
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+# Lines added for vercel
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'code/qr_app/static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'code/qr_app/static')
 
 
 # Password validation
