@@ -18,6 +18,7 @@
   </head>
 
   <body class="">
+    <!-- base_container -->
     <div id="base_container">{% block content%}{% endblock content%}</div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -39,4 +40,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/static/scripts.js"></script>
   </body>
+
+  <style>
+    #base_container {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+  </style>
 </html>

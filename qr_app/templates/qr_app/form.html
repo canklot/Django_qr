@@ -1,48 +1,44 @@
-<form id="qr_form_id" class="form_general center" method="post">
+<form id="qr_form_id" class="center" method="post">
   {% csrf_token %}
-  <div class="tool_header">Create QR code</div>
-  <div class="">{{ form.text }}</div>
-  <div class="barcode_type_css">{{ form.barcode_type_selection }}</div>
-  <input class="form_submit_css" type="submit" value="Submit" />
+  <div id="tool_header">Create QR code</div>
+  {{ form.text }} {{ form.barcode_type_selection }}
+  <input id="form_submit" type="submit" value="Submit" />
 </form>
 
 <style>
-  .form_general {
+  #qr_form_id {
     margin-top: 3%;
     margin-bottom: 3%;
   }
 
-  .barcode_type_css {
+  #qr_type_input_id {
     font-size: larger;
     background-color: inherit;
     color: inherit;
     border-radius: 5px;
+    display: block;
   }
+
   option {
-    /* Whatever color  you want */
     background-color: slategray;
   }
 
-  .form_text_css {
-    width: 100%;
-    background-color: rgb(24, 26, 27);
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    color: aliceblue;
-  }
-
-  .tool_header {
+  #tool_header {
     padding-top: 3%;
     font-size: 42px;
     font-weight: 600;
   }
 
-  #qr_text_input_id.form_text_css {
+  #qr_text_input_id {
     padding: 2%;
+    width: 100%;
+    background-color: rgb(24, 26, 27);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: aliceblue;
   }
 
-  .form_submit_css {
+  #form_submit {
     margin-top: 20px;
     padding: 10px 20px 10px;
     background-color: dodgerblue;
