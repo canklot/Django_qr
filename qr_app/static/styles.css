@@ -3,10 +3,18 @@ body {
     background-color: rgb(24, 26, 27);
     color: aliceblue;
 
+
 }
 
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
+
+}
+
+#base_container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
