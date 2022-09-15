@@ -1,0 +1,81 @@
+<div id="api_container" class="center_flex_outer">
+  <div>
+    <h1 id="api_usage_header">API USAGE</h1>
+    <p>
+      To use the api send your data in json format. You should recieve a pdf
+      file as a response. Or an error message in html or plain text format.
+    </p>
+
+    <table id="general_api_info_table">
+      <tr>
+        <th>URL:</th>
+        <td>https://django-qr.vercel.app/api</td>
+      </tr>
+      <tr>
+        <th>Format:</th>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <th>Method:</th>
+        <td>POST</td>
+      </tr>
+      <tr>
+        <th>Response:</th>
+        <td>Binary PDF File</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Restraints</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <th>text</th>
+        <td>List of strings</td>
+        <td>Max length 20</td>
+        <td>Data you want to create the qr_code of</td>
+      </tr>
+      <tr>
+        <th>barcode_type_selection</th>
+        <td>String</td>
+        <td>"qr_code" or "barcode_code128"</td>
+        <td>The type of barcode of qr_code you want to create</td>
+      </tr>
+    </table>
+    <h3 id="example_api_header">Example API usage</h3>
+    <code>{"text":["Hello", "world"],"barcode_type_selection":"qr_code"}</code>
+  </div>
+</div>
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    background-color: var(--dark_background);
+    color: aliceblue;
+    margin-bottom: 2%;
+  }
+
+  td,
+  th {
+    border: 4px solid var(--gray_background_lighter);
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--gray_background);
+  }
+  #api_usage_header {
+    margin: 2% 2% 2% 0%;
+  }
+  #example_api_header {
+    margin: 4% 2% 2% 0%;
+  }
+  #api_container table {
+    width: 100%;
+  }
+</style>

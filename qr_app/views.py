@@ -23,3 +23,7 @@ def api(request):
     lines = data['text']
     barcode_type = data['barcode_type_selection']
     return pipeline_pdf(lines, barcode_type)
+
+
+def api_usage(request):
+    return render(request, template_name="qr_app/api_usage.html")
