@@ -7,22 +7,12 @@
     </p>
 
     <table id="general_api_info_table">
+      {% for key, value in table_general.items %}
       <tr>
-        <th>URL:</th>
-        <td>https://django-qr.vercel.app/api</td>
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
       </tr>
-      <tr>
-        <th>Format:</th>
-        <td>JSON</td>
-      </tr>
-      <tr>
-        <th>Method:</th>
-        <td>POST</td>
-      </tr>
-      <tr>
-        <th>Response:</th>
-        <td>Binary PDF File</td>
-      </tr>
+      {% endfor %}
     </table>
 
     <table>

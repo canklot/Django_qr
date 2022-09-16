@@ -41,6 +41,12 @@ def api_usage(request):
                               'PZN',
                               'ITF',
                               'Gs1_128',
-                              'CODABAR', ]
+                              'CODABAR', ],
+        'table_general': {'URL': 'https://django-qr.vercel.app/api',
+                          'Format':	'JSON',
+                          'Method':	'POST',
+                          'Response':	'Binary PDF File'
+
+                          },
     }
     return render(request, template_name="qr_app/api_usage.html", context=context)
