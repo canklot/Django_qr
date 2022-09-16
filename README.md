@@ -1,6 +1,6 @@
 # Django_qr
 
-This project is made with DJango web framework.
+## https://django-qr.vercel.app/
 
 A big thanks to contributors of these open source libraries which are used in this project.
 
@@ -16,7 +16,7 @@ A big thanks to contributors of these open source libraries which are used in th
 
 To use the api send your data in json format. You should recieve a pdf file as a response. Or an error message in html or plan text format.
 
-> URL: website/qr_app/api
+> URL: https://django-qr.vercel.app/api
 >
 > Format: JSON
 >
