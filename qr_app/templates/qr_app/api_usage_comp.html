@@ -15,28 +15,16 @@
       {% endfor %}
     </table>
 
-    <table>
+    <table if="api_field_table">
+      {% for line in api_table_fields %}
       <tr>
-        <th>Field</th>
-        <th>Type</th>
-        <th>Restraints</th>
-        <th>Description</th>
+        {% for text in line %}
+        <td>{{text}}</td>
+        {% endfor %}
       </tr>
-      <tr>
-        <th>text</th>
-        <td>List of strings</td>
-        <td>Max length 20</td>
-        <td>Data you want to create the qr_code of</td>
-      </tr>
-      <tr>
-        <th>barcode_type_selection</th>
-        <td>String</td>
-        <td>
-          {% for format in supported_formats %} {{ format }}, {% endfor %}
-        </td>
-        <td>The type of barcode of qr_code you want to create</td>
-      </tr>
+      {% endfor %}
     </table>
+
     <h3 id="example_api_header">Example API usage</h3>
     <code>{"text":["Hello", "world"],"barcode_type_selection":"qr_code"}</code>
   </div>

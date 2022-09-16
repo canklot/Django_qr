@@ -42,11 +42,20 @@ def api_usage(request):
                               'ITF',
                               'Gs1_128',
                               'CODABAR', ],
+
         'table_general': {'URL': 'https://django-qr.vercel.app/api',
                           'Format':	'JSON',
                           'Method':	'POST',
                           'Response':	'Binary PDF File'
-
                           },
+
+        'api_table_fields': [
+            ['Field',	'Type',	'Restraints',	'Description'],
+            ['text', 'List of strings', 'Max length 20',
+                'Data you want to create the qr_code of'],
+            ["barcode_type_selection",	"String", 'qr_code or barcode_code128',
+                "The type of barcode of qr_code you want to create"]
+        ],
     }
-    return render(request, template_name="qr_app/api_usage.html", context=context)
+
+    return render(request, template_name='qr_app/api_usage.html', context=context)
