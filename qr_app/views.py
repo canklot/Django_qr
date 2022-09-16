@@ -26,22 +26,23 @@ def api(request):
 
 
 def api_usage(request):
+    supported_formats = ['qr_code',
+                         'Code128',
+                         'PZN7',
+                         'EAN13',
+                         'EAN14',
+                         'JAN',
+                         'UPCA',
+                         'ISBN13',
+                         'ISBN10',
+                         'ISSN',
+                         'Code39',
+                         'PZN',
+                         'ITF',
+                         'Gs1_128',
+                         'CODABAR', ]
     context = {
-        'supported_formats': ['qr_code',
-                              'Code128',
-                              'PZN7',
-                              'EAN13',
-                              'EAN14',
-                              'JAN',
-                              'UPCA',
-                              'ISBN13',
-                              'ISBN10',
-                              'ISSN',
-                              'Code39',
-                              'PZN',
-                              'ITF',
-                              'Gs1_128',
-                              'CODABAR', ],
+        'supported_formats': supported_formats,
 
         'table_general': {'URL': 'https://django-qr.vercel.app/api',
                           'Format':	'JSON',
@@ -51,9 +52,9 @@ def api_usage(request):
 
         'api_table_fields': [
             ['Field',	'Type',	'Restraints',	'Description'],
-            ['text', 'List of strings', 'Max length 20',
+            ['text', 'List of strings', 'Max length 20 per string',
                 'Data you want to create the qr_code of'],
-            ["barcode_type_selection",	"String", 'qr_code or barcode_code128',
+            ["barcode_type_selection",	"String", ', '.join(supported_formats),
                 "The type of barcode of qr_code you want to create"]
         ],
     }
