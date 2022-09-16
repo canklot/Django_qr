@@ -18,9 +18,11 @@
     <table if="api_field_table">
       {% for line in api_table_fields %}
       <tr>
-        {% for text in line %}
+        {% for text in line %} {% if line == api_table_fields.0 %}
+        <th>{{text}}</th>
+        {% else %}
         <td>{{text}}</td>
-        {% endfor %}
+        {% endif %} {% endfor %}
       </tr>
       {% endfor %}
     </table>
