@@ -41,7 +41,9 @@
       <tr>
         <th>barcode_type_selection</th>
         <td>String</td>
-        <td>"qr_code" or "barcode_code128"</td>
+        <td>
+          {% for format in supported_formats %} {{ format }}, {% endfor %}
+        </td>
         <td>The type of barcode of qr_code you want to create</td>
       </tr>
     </table>

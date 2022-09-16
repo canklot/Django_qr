@@ -26,4 +26,21 @@ def api(request):
 
 
 def api_usage(request):
-    return render(request, template_name="qr_app/api_usage.html")
+    context = {
+        'supported_formats': ['qr_code',
+                              'Code128',
+                              'PZN7',
+                              'EAN13',
+                              'EAN14',
+                              'JAN',
+                              'UPCA',
+                              'ISBN13',
+                              'ISBN10',
+                              'ISSN',
+                              'Code39',
+                              'PZN',
+                              'ITF',
+                              'Gs1_128',
+                              'CODABAR', ]
+    }
+    return render(request, template_name="qr_app/api_usage.html", context=context)
