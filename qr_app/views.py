@@ -58,3 +58,7 @@ def api_usage(request):
     }
 
     return render(request, template_name='qr_app/api_usage.html', context=context)
+
+
+def sitemap(request):
+    return render(request, template_name='qr_app/sitemap.xml')
