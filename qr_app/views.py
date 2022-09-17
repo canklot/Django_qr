@@ -42,8 +42,6 @@ def api_usage(request):
                          'Gs1_128',
                          'CODABAR', ]
     context = {
-        'supported_formats': supported_formats,
-
         'table_general': {'URL': 'https://django-qr.vercel.app/api',
                           'Format':	'JSON',
                           'Method':	'POST',
