@@ -1,7 +1,7 @@
 from ..utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
 from django.http import HttpResponse
 from django.utils import timezone
-from barcode.errors import IllegalCharacterError, NumberOfDigitsError, WrongCountryCodeError
+from barcode.errors import BarcodeError
 
 max_char_limit = 20
 
@@ -13,8 +13,7 @@ def pipeline_pdf(lines, barcode_type):
         return HttpResponse(f"Max character limit is {max_char_limit}")
     try:
         pdf = creator_pdf(barcode_type, lines)
-    except (IllegalCharacterError, NumberOfDigitsError, WrongCountryCodeError) as barcode_exc:
-        # Return the error message too in the future
+    except (BarcodeError) as barcode_exc:
         return HttpResponse(repr(barcode_exc))
     return reponse_creator_pdf(pdf, barcode_type)
 
