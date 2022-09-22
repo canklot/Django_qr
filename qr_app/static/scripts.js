@@ -11,7 +11,7 @@ $("#qr_form_id").on("submit", function () {
   textList = text.split("\n"); //add var or let later on
   barcode_type = document.getElementById("qr_type_input_id").value;
 
-  if (barcode_type == "qr_code") {
+  /*   if (barcode_type == "qr_code") {
     return true;
   } else if (barcode_type == "Code128") {
     hasMoreThanAscii = checkNonAscii(text);
@@ -19,9 +19,9 @@ $("#qr_form_id").on("submit", function () {
       alert("Code128 only supports ascii charecters");
       return false;
     }
-  }
+  } */
   myFetch(textList, barcode_type);
-  return true;
+  return false;
 });
 
 function myFetch(textParam, typeParam) {
@@ -36,8 +36,14 @@ function myFetch(textParam, typeParam) {
       barcode_type_selection: typeParam,
     }),
   })
-    .then((response) => {
-      return response.blob();
+    .then(async (response) => {
+      if (response.status == 400) {
+        text = await response.text();
+        alert(text);
+        throw 400;
+      } else {
+        return response.blob();
+      }
     })
     .then((blob) => {
       downloadFile(blob);

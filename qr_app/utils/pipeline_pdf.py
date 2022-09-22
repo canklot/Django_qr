@@ -1,7 +1,8 @@
 from ..utils.barcode_logic import convert_list_to_barcode, convert_list_to_qr
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils import timezone
 from barcode.errors import BarcodeError
+
 
 max_char_limit = 20
 
@@ -14,7 +15,7 @@ def pipeline_pdf(lines, barcode_type):
     try:
         pdf = creator_pdf(barcode_type, lines)
     except (BarcodeError) as barcode_exc:
-        return HttpResponse(repr(barcode_exc))
+        return HttpResponseBadRequest(repr(barcode_exc))
     return reponse_creator_pdf(pdf, barcode_type)
 
 
