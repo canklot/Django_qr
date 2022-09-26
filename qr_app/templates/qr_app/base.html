@@ -19,13 +19,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/static/styles.css" />
-    <link rel="shortcut icon" href="/static/favicon.png" />
   </head>
 
   <body class="">
-    <!-- base_container -->
-    <div id="base_container">{% block content%}{% endblock content%}</div>
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -43,7 +39,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/static/scripts.js"></script>
+
+    <!-- base_container -->
+    <div id="base_container">{% block content%}{% endblock content%}</div>
   </body>
 
   <style>
