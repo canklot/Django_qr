@@ -79,12 +79,7 @@ WSGI_APPLICATION = 'qr_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase.sqlite3',
-    }
-}
+DATABASES = {}
 
 
 # Password validation
@@ -136,6 +131,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJANGO_CPROFILE_MIDDLEWARE_REQUIRE_STAFF = False
-
-
-AUTH_USER_MODEL = 'qr_app.user'
