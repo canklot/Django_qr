@@ -71,6 +71,7 @@ def webhook(request):
     challenge = request.GET.get('hub.challenge', 'nochallange')
     
     if face_secret == verify_token:
+        print("correct token ")
         return HttpResponse(challenge)
     return HttpResponse("secret wrong")
     
