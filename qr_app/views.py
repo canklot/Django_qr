@@ -72,4 +72,4 @@ def webhook(request):
     
     if face_secret == verify_token:
         return HttpResponse(challenge, content_type="text/plain")
-    return HttpResponse("secret wrong")
+    return HttpResponse("secret wrong "+ verify_token)
