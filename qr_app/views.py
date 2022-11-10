@@ -65,6 +65,7 @@ def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
 def webhook(request):
+    print("got a webhook request ")
     face_secret = "attackontitans99."
     
     verify_token = request.GET.get('hub.verify_token', 'noverifytoken')
