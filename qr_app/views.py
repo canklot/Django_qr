@@ -69,5 +69,5 @@ def webhook(request):
     verify_token = request.GET['hub_verify_token']
     challenge = request.GET['hub_challenge']
     if face_secret == verify_token:
-        return HttpResponse(challenge)
+        return HttpResponse(challenge, content_type="text/plain")
     return HttpResponse("secret wrong")
