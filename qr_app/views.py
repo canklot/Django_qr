@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import HttpResponse
 from rest_framework.decorators import api_view
 from .forms import TextForm
 from .utils.pipeline_pdf import pipeline_pdf
@@ -65,4 +66,4 @@ def sitemap(request):
 
 def webhooks(request):
     
-    return "hook hit"
+    return HttpResponse("request hit")
