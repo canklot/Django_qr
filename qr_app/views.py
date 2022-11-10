@@ -64,5 +64,7 @@ def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
 def webhooks(request):
-    print(request.json)
-    return "success"
+    if 'application/json' in response.headers.get('Content-Type', ''):
+        print(request.json)
+        return "yes json"
+    return "no json"
