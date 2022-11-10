@@ -65,5 +65,5 @@ def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
 def webhooks(request):
-    
-    return HttpResponse("denizegitmeyiseverim99.")
+    challenge = request.GET['challenge']
+    return HttpResponse(challenge)
