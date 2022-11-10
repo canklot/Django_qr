@@ -67,9 +67,6 @@ def sitemap(request):
 def webhook(request):
     face_secret = "asd"
     
-    verify_token = request.GET.get('hub_verify_token', 'noverifytoken')
     challenge = request.GET.get('hub_challenge', 'nochallange')
+    return HttpResponse(challenge, content_type="text/plain")
     
-    if face_secret == verify_token:
-        return HttpResponse(challenge, content_type="text/plain")
-    return HttpResponse("secret wrong "+ verify_token)
