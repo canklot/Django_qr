@@ -64,6 +64,6 @@ def api_usage(request):
 def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
-def webhooks(request):
+def webhook(request):
     challenge = request.GET['hub_challenge']
     return HttpResponse(challenge)
