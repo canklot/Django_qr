@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
+
 from .forms import TextForm
 from .utils.pipeline_pdf import pipeline_pdf
 
@@ -73,6 +74,8 @@ def webhook(request):
     
     if face_secret == verify_token:
         print("correct token ")
+        request.json()
+        print(loadedjson["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]) 
         return HttpResponse(challenge)
     return HttpResponse("secret wrong")
     
