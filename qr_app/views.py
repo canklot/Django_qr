@@ -65,11 +65,12 @@ def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
 def webhook(request):
-    face_secret = "asd"
+    face_secret = "attackontitans99."
     
-    try:
-        challenge = request.GET['hub_challenge']
-    except:
-        challenge= "annen"
-    return HttpResponse(challenge, content_type="text/plain")
+    verify_token = request.GET.get('hub.verify_token', 'noverifytoken')
+    challenge = request.GET.get('hub.challenge', 'nochallange')
+    
+    if face_secret == verify_token:
+        return HttpResponse(challenge)
+    return HttpResponse("secret wrong")
     
