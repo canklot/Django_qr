@@ -6,5 +6,5 @@ urlpatterns = [
     path('api', views.api, name='api'),
     path('api_usage', views.api_usage, name='api_usage'),
     path('sitemap.xml/', views.sitemap, name='sitemap'),
-    path('webhook/', views.webhook, name='webhook'),
+    path('webhook', views.webhook, name='webhook'),
 ]
