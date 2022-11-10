@@ -67,8 +67,9 @@ def sitemap(request):
 def webhook(request):
     face_secret = "asd"
     
-    
-    challenge = request.GET.keys()
-    
+    try:
+        challenge = request.GET['hub.challenge']
+    except:
+        challenge= "annen"
     return HttpResponse(challenge, content_type="text/plain")
     
