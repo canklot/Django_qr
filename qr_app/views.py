@@ -66,4 +66,4 @@ def sitemap(request):
 
 def webhooks(request):
     
-    return HttpResponse("request hit")
+    return HttpResponse("denizegitmeyiseverim99.")
