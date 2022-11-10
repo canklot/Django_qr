@@ -62,3 +62,7 @@ def api_usage(request):
 
 def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
+
+def webhooks(request):
+    print(request.json)
+    return "success"
