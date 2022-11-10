@@ -68,7 +68,7 @@ def webhook(request):
     face_secret = "asd"
     
     try:
-        challenge = request.GET['hub.challenge']
+        challenge = request.GET['hub_challenge']
     except:
         challenge= "annen"
     return HttpResponse(challenge, content_type="text/plain")
