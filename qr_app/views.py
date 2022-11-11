@@ -74,8 +74,8 @@ def webhook(request):
     
     if face_secret == verify_token:
         print("correct token ")
-        request.json()
-        print(loadedjson["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]) 
+        json_data = json.loads(request.body)
+        print(json_data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]) 
         return HttpResponse(challenge)
     return HttpResponse("secret wrong")
     
