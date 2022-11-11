@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
+from django.views.decorators.csrf import csrf_exempt
 
 from .forms import TextForm
 from .utils.pipeline_pdf import pipeline_pdf
