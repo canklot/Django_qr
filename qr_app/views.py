@@ -71,7 +71,7 @@ def webhook(request):
     print("got a webhook request ")
     face_secret = "attackontitans99."
     
-    verify_token = request.GET.get('hub.verify_token', 'noverifytoken')
+    verify_token = request.GET.get('hub_verify_token', 'noverifytoken')
     challenge = request.GET.get('hub.challenge', 'nochallange')
     
     if face_secret == verify_token:
