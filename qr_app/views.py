@@ -65,6 +65,7 @@ def api_usage(request):
 def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
+@csrf_exempt
 def webhook(request):
     print("got a webhook request ")
     face_secret = "attackontitans99."
