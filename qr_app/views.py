@@ -79,5 +79,6 @@ def webhook(request):
         json_data = json.loads(request.body)
         print(json_data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]) 
         return HttpResponse(challenge)
+    print("verify token is: "+verify_token)
     return HttpResponse("secret wrong")
     
