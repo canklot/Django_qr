@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['.vercel.app', 'localhost', 'www.canklottools.tk',
 
 INSTALLED_APPS = [
     'qr_app.apps.QrAppConfig',
+    'whatsapp_api',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
