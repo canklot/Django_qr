@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
-
+import json
+import requests
 from .forms import TextForm
 from .utils.pipeline_pdf import pipeline_pdf
 
@@ -66,19 +67,47 @@ def api_usage(request):
 def sitemap(request):
     return render(request, template_name='qr_app/sitemap.xml')
 
+
 @csrf_exempt
 def webhook(request):
     print("got a webhook request ")
-    face_secret = "attackontitans99."
-    
-    verify_token = request.GET.get('hub_verify_token', 'noverifytoken')
-    challenge = request.GET.get('hub.challenge', 'nochallange')
-    
-    if face_secret == verify_token:
-        print("correct token ")
-        json_data = json.loads(request.body)
-        print(json_data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]) 
-        return HttpResponse(challenge)
-    print("verify token is: "+verify_token)
-    return HttpResponse("secret wrong")
-    
+    if request.method == "GET":
+        face_secret = "attackontitans99"
+        verify_token = request.GET.get('hub.verify_token', 'noverifytoken')
+        challenge = request.GET.get('hub.challenge', 'nochallange')
+        if face_secret == verify_token:
+            print("correct token ")
+            return HttpResponse(challenge)
+
+    if request.method == "POST":
+        if request.headers.get('content-type') == 'application/json':
+            json_data = json.loads(request.body)
+            print(json_data["entry"][0]["changes"][0]
+                  ["value"]["messages"][0]["text"]["body"])
+
+        temp_ac_token = "EAAGZBco97Pm8BAIm03Y760Bp27orQjgGNLTuRo3hAcb3tq4YcImZB9CwrrfOSq4EqWFz0ZB4EqjlZBBZAvsTiitpjV2gLInAcvJeZB6vSIZBeFNMtoMX2l5JGAnYlARcx0CuclNFbjFCw4mVHj4znWTABRKxZBPxqCnk733d1Qonk9Dlvb7B4EZAwgopYgDtcOBZBl3KhwGnZAGRgZDZD"
+
+        my_headers = {"Authorization": "Bearer" + " " + temp_ac_token,
+                      "Content-Type": "application/json", }
+
+        post_url = "https://graph.facebook.com/v15.0/102627869338297/messages"
+
+        my_template = {
+            "name": "hello_world",
+            "language": {"code": "en_US"}
+        }
+
+        my_data = {
+            "messaging_product": "whatsapp",
+            "to": "48505122109",
+            "type": "template",
+            "template": my_template
+        }
+
+        json_to_send = json.dumps(my_data)
+        response = requests.post(
+            post_url, data=json_to_send, headers=my_headers)
+        content = response.content
+        print(content)
+
+    return HttpResponse("end")
