@@ -4,6 +4,17 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import requests
 
+temp_ac_token = "EAAGZBco97Pm8BAGAZAtvvPVfWnLjnIh9Bkcx6lgDcfrZA5lrvl0XcGCkkV92lTzwiWzHqitlqeXZBJ5DHii79TPTqAZBDa5IWzOBW0rzZCmVbWt5YZCG2tDZBHZBgJCGDJSqTZCDbpujBtVaWyMrlZBLISib8grWhKycLKgxBViw524OlOZBgTdGml6y3oZARBoZAaDF7VbECNKen0awZDZD"
+
+def download_media(url):
+    my_headers = {"Authorization": "Bearer" + " " + temp_ac_token}
+    media = requests.get(url,headers=my_headers)
+    json_data = json.loads(media.text)
+    return json_data["url"]
+def download_media2(url):
+    my_headers = {"Authorization": "Bearer" + " " + temp_ac_token}
+    media = requests.get(url,headers=my_headers)
+    return media.content
 
 @csrf_exempt
 def webhook(request):
@@ -23,10 +34,8 @@ def webhook(request):
             with open("jsonlogs.json", 'a', encoding='utf-8') as f:
                 f.writelines(json.dumps(json_data) + "\n")
 
-            
 
-        temp_ac_token = "EAAGZBco97Pm8BAIm03Y760Bp27orQjgGNLTuRo3hAcb3tq4YcImZB9CwrrfOSq4EqWFz0ZB4EqjlZBBZAvsTiitpjV2gLInAcvJeZB6vSIZBeFNMtoMX2l5JGAnYlARcx0CuclNFbjFCw4mVHj4znWTABRKxZBPxqCnk733d1Qonk9Dlvb7B4EZAwgopYgDtcOBZBl3KhwGnZAGRgZDZD"
-
+        # Leave a space between Bearer and token
         my_headers = {"Authorization": "Bearer" + " " + temp_ac_token,
                       "Content-Type": "application/json", }
 
@@ -43,10 +52,23 @@ def webhook(request):
             "type": "template",
             "template": my_template
         }
-
-        if "messages" in json_data["entry"][0]["changes"][0]["value"]:
+        if not "messages" in json_data["entry"][0]["changes"][0]["value"]:
+            print("status recieved")
+            return HttpResponse("")
+        message_type = json_data["entry"][0]["changes"][0]["value"]["messages"][0]["type"]
+        if message_type == "text" :
                 message_recived = json_data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]
                 print(message_recived)
+        elif message_type == "document" :
+            media_id = json_data["entry"][0]["changes"][0]["value"]["messages"][0]["document"]["id"]
+            media_url = requests.get("https://graph.facebook.com/v15.0/" + media_id, headers= {"Authorization": "Bearer" + " " + temp_ac_token})
+            media_url =media_url.url
+            print(media_url)
+            media_url2 = download_media(media_url)
+            media= download_media2(media_url2)
+            with open("downloaded.pdf", 'wb') as f:
+                f.write(media)
+            message_recived = "file"
         else:
             message_recived = None
 
@@ -55,5 +77,6 @@ def webhook(request):
             response = requests.post(post_url, data=json_to_send, headers=my_headers)
             content = response.content
             print(content)
+            
     # You need to return blank 200 ok mesage to sender to say I revieved the message stop sending it
     return HttpResponse("")
