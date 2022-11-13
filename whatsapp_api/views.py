@@ -6,12 +6,12 @@ import requests
 
 temp_ac_token = "EAAGZBco97Pm8BAGAZAtvvPVfWnLjnIh9Bkcx6lgDcfrZA5lrvl0XcGCkkV92lTzwiWzHqitlqeXZBJ5DHii79TPTqAZBDa5IWzOBW0rzZCmVbWt5YZCG2tDZBHZBgJCGDJSqTZCDbpujBtVaWyMrlZBLISib8grWhKycLKgxBViw524OlOZBgTdGml6y3oZARBoZAaDF7VbECNKen0awZDZD"
 
-def download_media(url):
+def get_media_url(url):
     my_headers = {"Authorization": "Bearer" + " " + temp_ac_token}
     media = requests.get(url,headers=my_headers)
     json_data = json.loads(media.text)
     return json_data["url"]
-def download_media2(url):
+def download_media(url):
     my_headers = {"Authorization": "Bearer" + " " + temp_ac_token}
     media = requests.get(url,headers=my_headers)
     return media.content
@@ -32,7 +32,7 @@ def webhook(request):
             json_data = json.loads(request.body)
 
             with open("jsonlogs.json", 'a', encoding='utf-8') as f:
-                f.writelines(json.dumps(json_data) + "\n")
+                f.writelines(json.dumps(json_data) +","+ "\n")
 
 
         # Leave a space between Bearer and token
@@ -64,8 +64,8 @@ def webhook(request):
             media_url = requests.get("https://graph.facebook.com/v15.0/" + media_id, headers= {"Authorization": "Bearer" + " " + temp_ac_token})
             media_url =media_url.url
             print(media_url)
-            media_url2 = download_media(media_url)
-            media= download_media2(media_url2)
+            media_url2 = get_media_url(media_url)
+            media= download_media(media_url2)
             with open("downloaded.pdf", 'wb') as f:
                 f.write(media)
             message_recived = "file"
