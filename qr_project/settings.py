@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9x6a4iu*7z70jq@mpr$mh_8)w&ijv3@jbjui&zn_+&-gasvk$r
 DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', 'www.canklottools.tk',
-                 'www.canklotsoftware.tk', '.eu.ngrok.io']
+                 'www.canklotsoftware.tk', 'createbarcode.tk', '.eu.ngrok.io']
 
 
 # Application definition
