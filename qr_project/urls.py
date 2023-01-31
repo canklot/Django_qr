@@ -21,6 +21,7 @@ urlpatterns = [
     
     path('', include('qr_app.urls')),
     path('', include('whatsapp_api.urls')),
+    path('', include('pdf_to_txt.urls')),
     path('admin/', admin.site.urls),
     
     
