@@ -1,89 +1,105 @@
 
-                                                       Attestation de Destination /Régionale
-              OGEFREM
-              Office de Gestion du fret multimodal
-              Avenue TSF N°9 Commune de la Gombe
-                                                       A.D   N° 2022OCCD110616465
-              B.P. 8038 - KINSHASA - RDC               Du
-                                                       VALIDATION        0
-                                                       FXI:
+                                          Fen, Mühendislik ve Girişimcilik Uygulamaları
 
-IMPORTATEUR :        MAKABI WA NGOY JACQUES
-Importateur
-                     VILLAGE KASHAMATA C/ANNEXE HAUT-KATANGA;  TEL :  ; EMAIL: fericenter_sdf@yahoo.fr
+Mühendis
+Mühendisler insanların ve toplumun sorunlarına, ihtiyaçlarına kayıtsız kalmaz. Bu ih-
+tiyaç ve sorunlara teknik çözümler üretir, bilimsel yöntemlerle düşünür ve çalışır. Bu
+nedenle mühendisler, her zaman yeni bir ürün geliştiren veya tasarlayan insanlardır.
+Çalışmalarını yaparken bilim insanları gibi çalışır. Öncelikle insanların ihtiyaçlarını ve
+sorunlarını belirler, yaratıcı çözüm yolları için araştırma yapar. Çözüm odaklı araştırma-
+lar sonrasında en uygun tasarıma karar verir ve ürün geliştirir. Ürün geliştirirken birçok
+testten geçirir ve ürünü en iyi şekilde çalışması için tasarlar. Elde ettiği ürünün işlevsel-
+lik, güvenilirlik, üretilebilirlik, kullanılabilirlik, pazarlanabilirlik, toplam maliyet ve reka-
+bet gücü gibi özelliklerini dikkate alır.
+Mühendislik Tasarım Döngüsü
+Mühendisler de bilim insanları gibi belirli bir düzen ve plan dâhilinde çalışır. Mühen-
+dislerin çalışmalarında izlediği yola mühendislik tasarım döngüsü adı verilir. Tasarım,
+belirli bir ihtiyacı karşılamaya yönelik olarak sistematik bir plan dâhilinde yürütülen
+teorik ve uygulamalı çalışmalar bütünü olarak tanımlanır. Tasarım süreci, pek çok karar
+alınması gereken ve özü itibariyle yenilikçi bir süreçtir. Geliştirme ve karar alma süre-
+cinde görsel, yazınsal ve işitsel her türlü iletişim kaynağından yoğun olarak yararlanılır.
+Bir mühendislik tasarımının başlatılması ve sürdürülmesi, farklı disiplinlerin bu iletişim
+yöntemlerini etkin şekilde kullanması ve koordineli çalışmasıyla sağlanır. Temel olarak
+yürütülen çalışmalar; araştırma, tasarım-analiz, geliştirme, prototip üretimi ve kalite
+testleridir.
 
-EXPORTATEUR          FROZEN FISH
-Exportater
-                     KITWE ZAMBIE; TEL :; EMAIL :
 
-TRANSITAIRE :        KEN EXPANSION KENEX
-Forwarding agent
+                                Test et ve geliştir    Problemi belirle
 
-                            E 78900                         TRANSPORTEUR :  AARAN
-TITRE DE TRANSPORT :
-                                                            Carrier
-                            KITWE ZM                                                         ETA
-LIEU DE CHARGEMENT :
-Discharge Place
-                                                            LIEU DE            KASUMBALESA  04/06/2022
-                            LUBUMBASHI RDC
-DEST. FINALE EN RDC     :                                   DECHARGEMENT :
-Final destination
-                                                           POD
-                            3322AS05                                                   01/06/2022
-MOYEN DE TRANSPORT :                                       VG : N/A
-ID Transport
 
-TYPE/MODE DE TRANSPORT
-                                Routier ( VRAC/BULK)
- Type of transport
+                              Tasarla                              Hayal et
 
-                                            TN: 3.000 CBM: 3.000 UP:3.000
-VRAC 0.5FT
+                                                  Planla
 
-MARCHANDISE   CODE NC HS (ISO): 0202       VIANDES DES ANIMAUX DE L'ESPÈCE BOVINE, CONGELÉES
+                                       Mühendislik tasarım döngüsü
+                                                                                                       15
+
+ Fen, Mühendislik ve Girişimcilik Uygulamaları
 
-                                           FROZEN CHICKEN
 
-TYPE                               NR COLIS :                300     POIDS NET T:                      3.000
-COLIS :             CARTON(S)
-                                   NR PKG                            NET WEIGHT T.
-PKG TYPE
-ORIGINE :               ZAMBIE                                       POIDS BRUT T:                     3.000
-                                   OCC/ BIVAC :
-ORIGIN:                                                             GROSS WEIGHT
-                                                                     CBM            :                  3.000
+                                                    Bir Mühendis Gibi Çalışalım
 
-VALEURS DECLAREES PAR L'EXPORTATEUR                                         validated by
-                                                           VALIDEE PAR :
-SUJETTES A DES MODIFICATIONS A L'ARRIVEE
-                                                           OCC KATANGA KASUMBALESA
+Günlük  hayatta  karşılaşabileceğiniz
+bir problemi tanımlayınız. Bu prob-                                              Probleminiz nedir?
+lemin  neden  önemli  olduğunu  ve                                          ..........................................................................................
+niçin  bu  problemi  seçtiğinizi  açık-                                          Bu problemi neden seçtiniz?
+layınız.  Günlük  hayatta  karşılaşılan                                     ..........................................................................................
+hangi araç, nesne veya sistemi geliş-                                            Bu problem neden önemlidir?
+tirmeye yönelik bir problem belirle-                                        ..........................................................................................
+diğinizi açıklayınız.
+Problemin çözümü için fikirler üre-                                         Hayalinizdeki                 ürünün            ne      olduğunu               çiziniz
+tiniz ve bunları karşılaştırarak belirli                                    veya açıklayınız.
+kriterler kapsamında uygun olanı se-
+çiniz. Probleminizi malzeme, zaman
+ve maliyet kriterleri bakımından ele
+alarak değerlendiriniz.
+                                                                            Seçilen  tasarım  için  karşılaşılabilecek  prob-
+İyi bir planlama yapınız.                                                   lemleri ve çözüm yollarını ortaya koyunuz ve
+                                                                            bunları uygulamak için plan yapınız.
+                                                                            Tasarladığınız ürünü okula getirdiğiniz malze-
+                                                                            melerle yapınız ve deneyiniz.
+                                                                                 Ürününüz  seçtiğiniz  problemi  çözebiliyor
+Ürününüzü tasarlayınız ve sununuz.                                               mu?
+                                                                                 Ürününüzün eksiklikleri var mı?
+                                                                                 Bu eksiklikleri giderebiliyor musunuz?
 
-INCOTERM :                                       CPT
-                                                           AGENT OCC : OCCCD11B
-PAIEMENT FRET :                         EN SERVICE
-Freight payment
-                                                           FERI Imprimée,  le  08/06/2022  par   AIDA  DIALLO
-VALEUR FOB     (USD)
-                                              1500.00
-Free Onboard
-FRET DE BASE  :    (USD)
-                                                 0.00
-Basi Freight
-FRAIS ADDITIONNELS (USD)
-                                                  0.00
-Additional fees
-ASSURANCE      (USD)
-                                                 0.00
-Insurance
-
-      TOTAL : (USD)                          1500.00
+                                                                            Denemeler  sonucunda  ürününüzle  ilgili  ek-
+                                                                            siklikleri  belirleyiniz.  Belirlediğiniz  eksiklikleri
+Ürününüzü geliştiriniz.
+                                                                            gidermek için neler yapabileceğinize karar ve-
+                                                                            riniz.
+                                                                            Ürününüzü tanıtmak ve pazarlamak için stra-
+                                                                            tejiler geliştiriniz.
+Ürününüzü pazarlayınız.                                                     Ürününüze bir isim bulunuz.
+                                                                            Ürününüzün tanıtımı için gazete, internet
+                                                                            veya televizyon reklamı tasarlayınız.
 
 
 
+16
+
+                                     Fen, Mühendislik ve Girişimcilik Uygulamaları
+           Bunları Biliyor musunuz?
+Ressam olmak isteyen ama sekreterlik yap-
+mak  zorunda  kalan  Bette  Graham  (Beti
+Gıraham) gerçekte bu işte pek başarılı de-
+ğildir. Problemi yazı yazarken sık sık hata
+yapmasıdır. Ressamların hatalarının üzerini
+boyayarak  kapattığını  hatırlar.  Hatalarını
+kapatacak hızlı kuruyan bir boyayı, daksili,
+bulur. İlk başta gizli formülünü evinde mik-
+                                                                      Daksil
+ser kullanarak hazırlayan Bette’ye oğlu, ka-
+rışımı şişelere doldurarak yardım eder. 1980
+yılında bir firma Bette’ye 47 milyon dolar ödeyerek ürünün kullanım hakkını alır.
+                                     Tasarımınızın İsmi
+                                 Tasarımınızı buraya çiziniz.
 
 
 
 
-                                            Page 1  de 1
+             Tasarımınızın tanıtım ve pazarlama faaliyetlerini aşağıya yazınız.
+
+
+                                                                                            17
 

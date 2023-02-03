@@ -1,3 +1,12 @@
 from fitzclimc import gettext
+import io
+import os
 
-gettext("C:/Users/Canavar/Desktop/Projeler/Django_qr/pdf_to_txt/utils/3page.pdf" ,"C:/Users/Canavar/Desktop/Projeler/Django_qr/pdf_to_txt/utils/output.txt")
+memory_file = io.BytesIO()
+gettext("./pdf_to_txt/utils/3page.pdf" ,memory_file)
+
+print(os.getcwd())
+with open("./pdf_to_txt/utils/output.txt", "wb") as f:
+    f.write(memory_file.getbuffer())
+
+#print(memory_file.getvalue())

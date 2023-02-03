@@ -876,7 +876,7 @@ def gettext(input,output):
     if output == None:
         filename, _ = os.path.splitext(doc.name)
         output = filename + ".txt"
-    textout = open(output, "wb")
+    # textout = open(output, "wb")
     flags = TEXT_PRESERVE_LIGATURES | TEXT_PRESERVE_WHITESPACE
     
     func = {
@@ -888,7 +888,7 @@ def gettext(input,output):
         page = doc[pno - 1]
         func["layout"](
             page,
-            textout,
+            output,
             2,
             3,
             False,
@@ -896,7 +896,7 @@ def gettext(input,output):
             flags=flags,
         )
 
-    textout.close()
+    # textout.close()
 
 
 def main():
