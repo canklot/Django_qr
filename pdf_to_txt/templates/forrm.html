@@ -1,0 +1,6 @@
+<form id="pdf_form_id" class="center" method="post">
+  {% csrf_token %}
+  <div id="tool_header">Covert pdf to txt</div>
+  {{ form.text }} {{ form.barcode_type_selection }}
+  <input id="form_submit" type="submit" value="Submit" />
+</form>

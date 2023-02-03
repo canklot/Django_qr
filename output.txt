@@ -1,0 +1,89 @@
+
+                                                       Attestation de Destination /Régionale
+              OGEFREM
+              Office de Gestion du fret multimodal
+              Avenue TSF N°9 Commune de la Gombe
+                                                       A.D   N° 2022OCCD110616465
+              B.P. 8038 - KINSHASA - RDC               Du
+                                                       VALIDATION        0
+                                                       FXI:
+
+IMPORTATEUR :        MAKABI WA NGOY JACQUES
+Importateur
+                     VILLAGE KASHAMATA C/ANNEXE HAUT-KATANGA;  TEL :  ; EMAIL: fericenter_sdf@yahoo.fr
+
+EXPORTATEUR          FROZEN FISH
+Exportater
+                     KITWE ZAMBIE; TEL :; EMAIL :
+
+TRANSITAIRE :        KEN EXPANSION KENEX
+Forwarding agent
+
+                            E 78900                         TRANSPORTEUR :  AARAN
+TITRE DE TRANSPORT :
+                                                            Carrier
+                            KITWE ZM                                                         ETA
+LIEU DE CHARGEMENT :
+Discharge Place
+                                                            LIEU DE            KASUMBALESA  04/06/2022
+                            LUBUMBASHI RDC
+DEST. FINALE EN RDC     :                                   DECHARGEMENT :
+Final destination
+                                                           POD
+                            3322AS05                                                   01/06/2022
+MOYEN DE TRANSPORT :                                       VG : N/A
+ID Transport
+
+TYPE/MODE DE TRANSPORT
+                                Routier ( VRAC/BULK)
+ Type of transport
+
+                                            TN: 3.000 CBM: 3.000 UP:3.000
+VRAC 0.5FT
+
+MARCHANDISE   CODE NC HS (ISO): 0202       VIANDES DES ANIMAUX DE L'ESPÈCE BOVINE, CONGELÉES
+
+                                           FROZEN CHICKEN
+
+TYPE                               NR COLIS :                300     POIDS NET T:                      3.000
+COLIS :             CARTON(S)
+                                   NR PKG                            NET WEIGHT T.
+PKG TYPE
+ORIGINE :               ZAMBIE                                       POIDS BRUT T:                     3.000
+                                   OCC/ BIVAC :
+ORIGIN:                                                             GROSS WEIGHT
+                                                                     CBM            :                  3.000
+
+VALEURS DECLAREES PAR L'EXPORTATEUR                                         validated by
+                                                           VALIDEE PAR :
+SUJETTES A DES MODIFICATIONS A L'ARRIVEE
+                                                           OCC KATANGA KASUMBALESA
+
+INCOTERM :                                       CPT
+                                                           AGENT OCC : OCCCD11B
+PAIEMENT FRET :                         EN SERVICE
+Freight payment
+                                                           FERI Imprimée,  le  08/06/2022  par   AIDA  DIALLO
+VALEUR FOB     (USD)
+                                              1500.00
+Free Onboard
+FRET DE BASE  :    (USD)
+                                                 0.00
+Basi Freight
+FRAIS ADDITIONNELS (USD)
+                                                  0.00
+Additional fees
+ASSURANCE      (USD)
+                                                 0.00
+Insurance
+
+      TOTAL : (USD)                          1500.00
+
+
+
+
+
+
+
+                                            Page 1  de 1
+
