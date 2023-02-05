@@ -1,0 +1,2 @@
+Namespace(convert_white=False, extra_spaces=False, fontsize=3, func=<function gettext at 0x000001DE247D2828>, grid=2, input='660557.pdf', mode='layout',
+ noformfeed=False, noligatures=False, output=None, pages='1-N', password=None, skip_empty=False)

@@ -59,7 +59,7 @@ def recoverpix(doc, item):
 
 def open_file(filename, password=None, show=False, pdf=True):
     """Open and authenticate a document."""
-    doc = fitz.open(filename)
+    doc = fitz.open(stream=filename, filetype="pdf")
     if not doc.is_pdf and pdf is True:
         sys.exit("this command supports PDF files only")
     rc = -1
