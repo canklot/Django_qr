@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['.vercel.app', 'localhost',
 
 INSTALLED_APPS = [
     'qr_app.apps.QrAppConfig',
+    'pdf_to_txt.apps.PdfToTxtConfig',
     'whatsapp_api',
     'rest_framework',
     'django.contrib.admin',
