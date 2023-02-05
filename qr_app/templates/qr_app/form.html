@@ -1,6 +1,6 @@
-<form id="qr_form_id" class="center" method="post">
+<form id="qr_form_id" method="post">
   {% csrf_token %}
-  <div id="tool_header">Create QR code</div>
+  <div id="tool_header">Create QR and barcode</div>
   {{ form.text }} {{ form.barcode_type_selection }}
   <input id="form_submit" type="submit" value="Submit" />
 </form>
