@@ -8,7 +8,7 @@ import io
 def index(request):
     if request.method != 'POST':
         form = UploadFileForm()
-        return render(request, 'pdf_to_txt/form.html', {'form': form})
+        return render(request, 'pdf_to_txt/upload_file_form.html', {'form': form})
 
     form = UploadFileForm(request.POST , request.FILES)
     if form.is_valid():
