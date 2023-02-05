@@ -1,8 +1,7 @@
 <form id="pdf_form_id" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div id="tool_header">Covert pdf to txt</div>
-  {{ form.file }}
-  <input id="form_submit" type="submit" value="Submit" />
+  <label class="custom-file-upload"> Select file {{ form.file }} </label>
 </form>
 
 <style>
@@ -19,31 +18,28 @@
     }
   }
 
-  option {
-    background-color: slategray;
-  }
-
   #tool_header {
     padding-top: 3%;
     font-size: 42px;
     font-weight: 600;
   }
 
-  #file_selector_id {
+  /*  #file_selector_id ::file-upload-button {
     padding: 2%;
     width: 100%;
     background-color: var(--dark_background);
     margin-top: 20px;
     margin-bottom: 20px;
-    color: aliceblue;
-  }
+    color: dodgerblue;
+  } */
 
-  #form_submit {
-    margin-top: 20px;
-    padding: 10px 20px 10px;
-    background-color: dodgerblue;
-    color: inherit;
-    border-radius: 5px;
-    border-color: transparent;
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
   }
 </style>
