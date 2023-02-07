@@ -1,16 +1,21 @@
-<form id="pdf_form_id" method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div id="tool_header">Covert pdf to txt</div>
-  <label class="custom-file-upload"> Select file {{ form.file }} </label>
-</form>
-
+<center-container id="center-container">
+  <form id="pdf_form_id" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="tool_header">Layout preserving text extraction</div>
+    <label id="custom-file-upload-id"> Select file {{ form.file }} </label>
+    <div id="tool-explanation-id">
+      Convert your pdf files to txt files online. Without messing the layout and keeping the layout intact.
+    </div>
+  </form>
+</center-container>
 <style>
+  #center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align horizontal */
+  }
   #pdf_form_id {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin: auto;
     width: 50%;
-    padding: 10px;
   }
   @media (max-width: 641px) {
     #pdf_form_id {
@@ -24,22 +29,26 @@
     font-weight: 600;
   }
 
-  /*  #file_selector_id ::file-upload-button {
-    padding: 2%;
-    width: 100%;
-    background-color: var(--dark_background);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: dodgerblue;
-  } */
-
   input[type="file"] {
     display: none;
   }
-  .custom-file-upload {
+  #custom-file-upload-id {
     border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
+    border-radius: 5px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center; /* Align horizontal */
+    align-items: center;
+    text-align: center;
+
+    margin: 5% 5% 5% 0%;
+    height: 100px;
+
+    font-size: xx-large;
+    background-color: gray;
+  }
+  #tool-explanation-id {
+    font-size: x-large;
   }
 </style>
