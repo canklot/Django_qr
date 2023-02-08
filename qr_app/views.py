@@ -3,11 +3,18 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from .forms import TextForm
 from .utils.pipeline_pdf import pipeline_pdf
+from django.http import HttpResponse
 
 def index(request):
+    domain = request.get_host()
+    if domain == "createbarcode.tk:80":
+        return create_barcode(request)
+    return render(request, 'qr_app/home.html')
+
+def create_barcode(request):
     if request.method != 'POST':
         form = TextForm()
-        return render(request, 'qr_app/home.html', {'form': form})
+        return render(request, 'qr_app/create_barcode.html', {'form': form})
 
     form = TextForm(request.POST)
     if form.is_valid():
