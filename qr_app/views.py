@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 def index(request):
     domain = request.get_host()
-    if domain == "createbarcode.tk:80":
+    if domain == "www.createbarcode.tk:80":
         return create_barcode(request)
     return render(request, 'qr_app/home.html')
 
