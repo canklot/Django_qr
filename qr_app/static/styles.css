@@ -17,7 +17,7 @@ body {
     align-items: center;
 }
 
-.bg-dark {
+.bg-dark-mc {
     background-color: var(--dark_background);
 }
 
