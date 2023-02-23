@@ -17,6 +17,10 @@ body {
     align-items: center;
 }
 
+.bg-dark {
+    background-color: var(--dark_background);
+}
+
 code {
     background-color: var(--gray_background);
     padding: 1ch;
