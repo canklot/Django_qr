@@ -36,7 +36,7 @@ def sitemap(request):
 def api_usage(request):
     supported_formats=['qr_code','Code128','PZN7','EAN13','EAN14','JAN','UPCA','ISBN13','ISBN10','ISSN','Code39','PZN','ITF','Gs1_128','CODABAR',]
     context = {
-        'table_general': {'URL': 'https://django-qr.vercel.app/api',
+        'table_general': {'URL': 'https://www.canklottools.tk/api',
                           'Format':	'JSON',
                           'Method':	'POST',
                           'Response':	'Binary PDF File'
