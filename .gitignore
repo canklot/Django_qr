@@ -1,5 +1,5 @@
 /.vscode
-/qr_venv
+/qr_venv*
 /git_ignore_folder
 *.egg-info
 *.pot
